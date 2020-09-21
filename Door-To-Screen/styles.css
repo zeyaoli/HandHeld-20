@@ -17,11 +17,6 @@ body {
   flex-direction: column;
 }
 
-.slider-wrapper {
-  display: flex;
-  justify-content: center;
-}
-
 #slider {
   position: absolute;
   z-index: 10000;
@@ -60,6 +55,36 @@ img {
   z-index: 2;
 }
 
+.slider-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 input[type="range"] {
-  width: 50%; /* Specific width is required for Firefox. */
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 50%;
+  height: 15px;
+  border-radius: 10px;
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border: 0;
+  background: url("https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/apple/237/key_1f511.png");
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border: 0;
+  background: url("https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/apple/237/key_1f511.png");
+  cursor: pointer;
 }

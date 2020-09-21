@@ -15,18 +15,31 @@ function update() {
   updateScale(secondPic, slider.value);
   updateScale(thirdPic, slider.value);
 
+  setZIndex(firstPic);
+  setZIndex(secondPic);
+  setZIndex(thirdPic);
+
   secondPic.style.transform = `scale(${slider.value})`;
   thirdPic.style.transform = `scale(${slider.value})`;
 
   fadeOut(firstPic, 0.028 * slider.value);
-  fadeOut(secondPic, 0.03 * slider.value);
+  fadeOut(secondPic, 0.028 * slider.value);
   fadeOut(thirdPic, 0.03 * slider.value);
 
-  console.log(firstPic.style.zIndex);
+  console.log(`First: ${getHeight(firstPic)}`);
+
+  // console.log(`First: ${firstPic.style.zIndex}`);
+  // console.log(`Second: ${secondPic.style.zIndex}`);
+  // console.log(`Third: ${thirdPic.style.zIndex}`);
 }
 
 function updateScale(pic, value) {
   pic.style.transform = `scale(${value})`;
+}
+
+function setZIndex(element) {
+  let height = getHeight(element);
+  element.style.zIndex = 10000 - height;
 }
 
 //NO NEED FOR THIS TIME
@@ -55,10 +68,13 @@ function resetPic(pic, value, height) {
   if (noOpacity == true) {
     pic.style.opacity = 1;
     updateScale(pic, value);
-    pic.style.zIndex = 10000 - height;
-    console.log(pic.style.zIndex);
+    pic.style.zIndex = 100000 - height;
     noOpacity = false;
   }
 }
 
 slider.addEventListener("input", update);
+
+window.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM fully loaded and parsed");
+});
