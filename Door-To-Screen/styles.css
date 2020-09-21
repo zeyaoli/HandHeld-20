@@ -2,14 +2,14 @@
   box-sizing: border-box;
 }
 body {
-  margin: 0;
+  margin: 20px;
   padding: 0;
   background-color: black;
 }
 
 .container {
-  width: 100vw;
-  height: 95vh;
+  width: 90vw;
+  height: 90vh;
   margin: 0;
   display: flex;
   align-items: center;
@@ -19,7 +19,7 @@ body {
 
 #slider {
   position: absolute;
-  z-index: 10000;
+  z-index: 100000;
 }
 
 #images {
@@ -58,33 +58,34 @@ img {
 .slider-wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
 input[type="range"] {
   -webkit-appearance: none; /* Override default CSS styles */
   appearance: none;
-  width: 50%;
-  height: 15px;
+  width: 50%; /* Full-width */
+  height: 20px;
   border-radius: 10px;
   background: #d3d3d3; /* Grey background */
   outline: none; /* Remove outline */
 }
 
-.slider::-webkit-slider-thumb {
+#slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
+  width: 32px;
+  height: 32px;
   border: 0;
-  background: url("https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/apple/237/key_1f511.png");
+  background: url("key-32.png");
   cursor: pointer;
 }
 
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
+#slider::-moz-range-thumb {
+  width: 32px;
+  height: 32px;
   border: 0;
-  background: url("https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/apple/237/key_1f511.png");
+  background: url("key-32.png");
   cursor: pointer;
 }
